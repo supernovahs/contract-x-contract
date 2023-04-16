@@ -1,14 +1,14 @@
-export FUZZ_API_KEY= # Add your fuzz api key here
+export FUZZ_API_KEY= #Your API key
 
 fuzz:
-	@echo "Fuzzing... "
-	fuzz -c .fuzz_foundry.yml arm
+	@echo "Fuzzing...  "
+	fuzz -c .fuzz_foundry_${Contract}.yml arm
 	forge build --build-info
 	anvil &> /dev/null &
 	sleep 2 # Wait for 2 seconds
-	forge script script/Counter.s.sol --fork-url http://localhost:8545 --broadcast
-	 fuzz -c .fuzz_foundry.yml run
-	
+	forge script script/${Contract}.s.sol --fork-url http://localhost:8545 --broadcast
+	 fuzz -c .fuzz_foundry_${Contract}.yml run
+	fuzz -c .fuzz_foundry_${Contract}.yml disarm
 
 clean:
 	rm -rf ./out/

@@ -6,7 +6,7 @@ fuzz:
     ide: "foundry"
 
     # The following address is going to be the main target for the fuzzing campaign
-    deployed_contract_address: "0x0165878a594ca255338adfa4d48449f69242eb8f"
+    deployed_contract_address: "0xe7f1725e7734ce288f8367e1bb143e90bb3f0512"
 
     # We'll do fuzzing with 2 cores 🚀
     number_of_cores: 2
@@ -19,10 +19,10 @@ fuzz:
     
     # When the campaign is created it'll get a name <prefix>_<random_characters>
     campaign_name_prefix: "Number > 50 "
-    # Point to your ganache node which holds the seed 🌱
+    # Point to your anvil node which holds the seed 🌱
     rpc_url: "http://localhost:8545"
 
-    key: #Your API Key 
+    key: ""
 
     # This is the contract that the campaign will show coverage for/ map issues to etc
     # It's a list of all the relevant contracts (don't worry about dependencies, we'll get those automatically 🙌)
