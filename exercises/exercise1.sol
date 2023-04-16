@@ -30,7 +30,7 @@ contract Pausable is Ownable {
     }
 }
 
-contract Token is Ownable, Pausable {
+contract Exercise1 is Ownable, Pausable {
     mapping(address => uint256) public balances;
 
     function transfer(address to, uint256 value) public whenNotPaused {

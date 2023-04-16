@@ -1,4 +1,4 @@
-export FUZZ_API_KEY= #Your API key
+export FUZZ_API_KEY= # Your APi key 
 
 fuzz:
 	@echo "Fuzzing...  "

@@ -30,9 +30,16 @@ contract Pausable is Ownable {
     }
 }
 
-contract Token is Ownable, Pausable {
+/// #invariant {:msg "Scribble balance < 10000"} balances[scribble] <= 10000;
+contract Exercise1 is Ownable, Pausable {
+    
+    address scribble = tx.origin;
     mapping(address => uint256) public balances;
-
+    
+    constructor()  {
+        balances[scribble] = 11000;
+    }
+    
     function transfer(address to, uint256 value) public whenNotPaused {
         balances[msg.sender] -= value;
         balances[to] += value;
