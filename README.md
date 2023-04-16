@@ -9,7 +9,7 @@ A smart contract security engineering effort .
 ### To Test 
 
 - Enter your [API_KEY](https://fuzzing.diligence.tools/)  [here](https://github.com/supernovahs/contract-x-contract/blob/8c5c67980101d5ac72f66f46b1b5ea8965a1fddc/Makefile#L1)
-- Run `make fuzz`
+- Run `make fuzz Contract="<TargetContractName>"`
 
 If permission error , append sudo in the command 
 
