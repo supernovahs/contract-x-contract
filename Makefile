@@ -1,4 +1,4 @@
-export FUZZ_API_KEY= # Your APi key 
+-include .env
 
 fuzz:
 	@echo "Fuzzing...  "
