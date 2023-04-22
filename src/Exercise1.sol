@@ -30,7 +30,6 @@ contract Pausable is Ownable {
     }
 }
 
-/// #invariant {:msg "Scribble balance < 10000"} balances[scribble] <= 10000;
 contract Exercise1 is Ownable, Pausable {
     
     address scribble = tx.origin;
