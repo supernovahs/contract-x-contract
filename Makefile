@@ -1,7 +1,7 @@
 export FUZZ_API_KEY=
 
 fuzz:
-	@echo "Fuzzing... ${FIZZ_API_KEY} "
+	@echo "Fuzzing... ${FUZZ_API_KEY} "
 	fuzz -c .fuzz_foundry_${Contract}.yml arm
 	forge build --build-info
 	anvil &> /dev/null &

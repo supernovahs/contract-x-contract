@@ -70,6 +70,10 @@ pragma solidity ^0.8.15;
 contract Ownable {
     address public owner = msg.sender;
 
+    function transferOwnership(address newOwner) public onlyOwner {
+        owner = newOwner;
+    }
+
     modifier onlyOwner() {
         require(msg.sender == owner, "Ownable: Caller is not the owner.");
         _;
@@ -97,19 +101,16 @@ contract Pausable is Ownable {
     }
 }
 
-/// #invariant {:msg "Scribble balance < 10000"} balances[scribble] <= 10000;
-contract Exercise1 is Ownable, Pausable {
-    
-    address scribble = tx.origin;
+contract Exercise2 is Ownable, Pausable {
     mapping(address => uint256) public balances;
-    
-    constructor()  {
-        balances[scribble] = 10000;
-    }
-    
+
+/// #if_succeeds {:msg "msg.sender"} balances[msg.sender] <= (balances[msg.sender] + value);
+/// #if_succeeds {:msg "to"} balances[to] >= (balances[to] + value);
     function transfer(address to, uint256 value) public whenNotPaused {
+        unchecked{
         balances[msg.sender] -= value;
         balances[to] += value;
+        }
     }
 }
 

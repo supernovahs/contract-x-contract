@@ -6,7 +6,7 @@ fuzz:
     ide: "foundry"
 
     # The following address is going to be the main target for the fuzzing campaign
-    deployed_contract_address: "0x5fbdb2315678afecb367f032d93f642f64180aa3"
+    deployed_contract_address: "0x5fc8d32690cc91d4c39d9d3abcbd16989f875707"
 
     # We'll do fuzzing with 2 cores 🚀
     number_of_cores: 2
@@ -28,4 +28,7 @@ fuzz:
     # It's a list of all the relevant contracts (don't worry about dependencies, we'll get those automatically 🙌)
     targets:
         - "src/Exercise2.sol"
+
+    
+
 

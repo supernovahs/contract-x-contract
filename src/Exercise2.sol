@@ -37,7 +37,7 @@ contract Pausable is Ownable {
 contract Exercise2 is Ownable, Pausable {
     mapping(address => uint256) public balances;
 
-// if_succeeds  balances[msg.sender] <= (balances[msg.sender] + value);
+
     function transfer(address to, uint256 value) public whenNotPaused {
         unchecked{
         balances[msg.sender] -= value;
